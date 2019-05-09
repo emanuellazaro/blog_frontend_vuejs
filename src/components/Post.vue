@@ -5,7 +5,7 @@
       v-bind:post_title="content.post_title">
       <br>
       <div>
-        <h3>{{ content.post_title }}</h3>
+        <h2>{{ content.post_title }}</h2>
       </div>
       <div>
         <h6 class="text-muted">Published at {{ content.post_created_at | formatDate }}</h6>
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getPost(postslugforsearch) {
-      const path = `http://localhost:5000/posts/${postslugforsearch}/`;
+      const path = `https://f4jtl1myz7.execute-api.us-east-1.amazonaws.com/dev/posts/${postslugforsearch}/`;
       axios.get(path).then(
         (response) => {
           // console.log(response.data.post);

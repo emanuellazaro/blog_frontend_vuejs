@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     getPosts() {
-      const path = 'http://localhost:5000/posts/';
+      const path = 'https://f4jtl1myz7.execute-api.us-east-1.amazonaws.com/dev/posts/';
       // const path = 'http://localhost:5000/posts/';
       axios.get(path).then(
         (response) => {

@@ -73,43 +73,6 @@
         </table>
       </div>
     </div>
-
-    <!-- edit post modal -->
-    <b-modal ref="editPostModal"
-         id="post-update-modal"
-         title="Update"
-         hide-footer>
-      <b-form @submit="onSubmitUpdate" @reset="onResetUpdate" class="w-100">
-        <b-form-group id="form-title-edit-group"
-                    label="Title:"
-                    label-for="form-title-edit-input">
-            <b-form-input id="form-title-edit-input"
-                          type="text"
-                          v-model="editForm.post_title"
-                          required
-                          placeholder="Enter title">
-            </b-form-input>
-        </b-form-group>
-        <b-form-group id="form-content-edit-group"
-                      label="Content:"
-                      label-for="form-content-edit-textarea">
-            <b-form-textarea id="form-content-edit-textarea"
-                          type="text"
-                          v-model="editForm.post_content"
-                          :rows="6"
-                          required
-                          placeholder="Enter Content">
-            </b-form-textarea>
-        </b-form-group>
-        <b-form-group id="form-published-edit-group">
-          <b-form-checkbox-group v-model="editForm.published" id="form-checks">
-            <b-form-checkbox value="true">Published?</b-form-checkbox>
-          </b-form-checkbox-group>
-        </b-form-group>
-        <b-button type="submit" variant="primary">Update</b-button>
-        <b-button type="reset" variant="danger">Cancel</b-button>
-      </b-form>
-    </b-modal>
   </div>
 </template>
 

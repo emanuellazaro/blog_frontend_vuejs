@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-light main">
-      <div class="navbar-header"><router-link class="navbar-brand" to="/">blog</router-link></div>
+      <div class="navbar-header"><router-link class="navbar-brand" to="/">brazu.ca</router-link></div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
       aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,8 +48,8 @@ export default {
       router.push({ name: 'Home' });
     },
   },
-    mounted() {
-      EventBus.$on('logged-in', (status) => {
+  mounted() {
+    EventBus.$on('logged-in', (status) => {
       this.auth = status;
     });
   },
