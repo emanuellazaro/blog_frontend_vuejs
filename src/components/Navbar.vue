@@ -1,28 +1,23 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-light main">
-      <div class="navbar-header"><router-link class="navbar-brand" to="/">brazu.ca</router-link></div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-      aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse mr-auto mt-2 mt-lg-0" id="navbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link class="nav-link a" to="/">blog</router-link>
-          </li>
-          <li v-if="auth==''" class="nav-item">
-            <router-link class="nav-link a" to="/about">about</router-link>
-          </li>
-          <li v-if="auth=='loggedin'" class="nav-item">
-            <router-link class="nav-link a" to="/dashboard">Dashboard</router-link>
-          </li>
-          <li v-if="auth=='loggedin'" class="nav-item">
+    <b-navbar toggleable="lg" type="light" class="main">
+      <b-navbar-brand href="/">brazu.ca</b-navbar-brand>
+
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item v-if="auth==''" class="nav-link" href="/">blog</b-nav-item>
+          <b-nav-item v-if="auth==''" class="nav-link" href="/about">about</b-nav-item>
+          <b-nav-item v-if="auth=='loggedin'">
+            <router-link class="nav-link" to="/dashboard">Dashboard</router-link>
+          </b-nav-item>
+          <b-nav-item v-if="auth=='loggedin'">
             <a class="nav-link" href="" v-on:click="logout">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+          </b-nav-item>
+        </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
   </div>
 </template>
 
@@ -32,7 +27,7 @@ import EventBus from './EventBus.vue';
 import router from '../router';
 
 EventBus.$on('logged-in', (test) => {
-  // console.log(test);
+  console.log(test);
 });
 export default {
   data() {
