@@ -31,7 +31,7 @@ export default {
       axios.get(path).then(
         (response) => {
           // console.log(response.data);
-          this.posts = response.data;
+          this.posts = response.data.reverse(); // Sort posts by date
         })
         .catch((error) => {
           // eslint-disable-next-line
